@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zzu.he.mapper.ProMapper">
+<mapper namespace="com.example.tmall.credit.mapper.ProMapper">
 
-	 <select id="findAllPro" resultType="com.zzu.he.entity.ProductInfo">
+    <select id="findAllPro" resultType="com.example.tmall.credit.entity.ProductInfo">
       select * from   product_info   order by service_id limit #{start},#{pagesize}
     </select>
-    
-    
-	 
-	  <select id="findAll" resultType="com.zzu.he.entity.ProductInfo">
+
+	  <select id="findAll" resultType="com.example.tmall.credit.entity.ProductInfo">
       select * from   product_info
     </select>
-    <select id="findProById" resultType="com.zzu.he.entity.ProductInfo">
-        select * from product_info where service_id = #{service_id}
-    </select>
-
-    <select id="findProByName" resultType="com.zzu.he.entity.ProductInfo">
+    
+     <select id="findProByName" resultType="com.example.tmall.credit.entity.ProductInfo">
         select * from product_info where name like CONCAT(CONCAT('%',#{0}),'%') limit #{1},#{2}
     </select>
-
 
 	<select id="ProCount" resultType="Integer">
 		select count(service_id) from product_info
     </select>
-	
+
+    <select id="findProInfoByID" resultType="com.example.tmall.credit.entity.ProductInfo">
+		select * from product_info where service_id = #{service_id}
+    </select>
+
+    <select id="getProduct" resultType="com.example.tmall.credit.entity.ProductInfo">
+        select * from product_info where service_id = #{service_id}
+    </select>
+
 
 </mapper>

@@ -1,0 +1,54 @@
+<div th:fragment="html">
+    <script>
+        $(function () {
+            var cid = getUrlParms("cid");
+            var sort = getUrlParms("sort");
+            var data4Vue = {
+                uri: 'forecategory',
+                c: '',
+                sort: '',
+                uri1: 'forehome',
+                categories: []
+            };
+
+            var vue = new Vue({
+                el: '#workingArea',
+                data: data4Vue,
+                mounted: function () { //mounted　表示这个 Vue 对象加载成功了
+                    this.load();
+                },
+                methods: {
+                    load: function () {
+                        this.sort = sort;
+                        var url = this.uri + "/" + cid + "?sort=" + sort;
+                        axios.get(url).then(function (response) {
+                            vue.c = response.data;
+                            vue.$nextTick(function () {
+                                linkDefaultActions();
+                            })
+                        });
+                        var url1 = this.uri1;
+                        axios.get(url1).then(function (response) {
+                            vue.categories = response.data;
+                            vue.$nextTick(function () {
+                                //要等渲染结束之后，才来进行监听，否则他们都没有被创建出来，监听也没有意义呀
+                                homePageRegisterListeners();
+                            });
+                        });
+                    }
+                }
+            });
+        })
+    </script>
+
+    <title>{{c.name}}</title>
+    <div id="category">
+        <div class="categoryPageDiv">
+            <!--<img v-if="c.id!=null" :src="'img/category/'+c.id+'.jpg'">-->
+           <!-- <img v-if="c.id!=null" src="img/category/1.png">-->
+            <div th:replace="include/fore/home/categoryAndcarousel::html"></div>
+            <div th:replace="include/fore/category/sortBar::html"></div>
+            <div th:replace="include/fore/category/productsByCategory::html"></div>
+        </div>
+    </div>
+</div>

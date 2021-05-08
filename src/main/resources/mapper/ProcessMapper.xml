@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.tmall.credit.mapper.ProcessMapper">
+
+    <select id="findAllProcessByServiceID" resultType="com.example.tmall.credit.entity.Process">
+    select  * from service_process where service_id = #{service_id}
+</select>
+
+
+</mapper>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册LAU</title>
+
+
+    <link rel="stylesheet" href="/Sys/lib/layuiii/css/layui.css"/>
+<!--    <link rel="stylesheet" href="/Sys/css/layui.css">-->
+<!--    <link rel="stylesheet" href="/Sys/css/sign.css">-->
+
+<!--    <link rel="stylesheet" href="/Sys/js/css/modules/layui-icon-extend/iconfont.css">-->
+<!--    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />-->
+<!--    <link rel="stylesheet" href="/Sys/css/font.css">-->
+<!--    <link rel="stylesheet" href="/Sys/css/xadmin.css">-->
+    <script type="text/javascript"
+            src="/Sys/js/jquery-3.3.1.min.js"></script>
+<!--    <script src="/Sys/lib/layui/layui.js" charset="utf-8"></script>-->
+    <script type="text/javascript" src="/Sys/js/xadmin.js"></script>
+    <script src="/Sys/js/echarts.min.js"></script>
+
+
+</head>
+<body >
+
+<span id="score1"></span>
+
+<span id="character1"></span>
+</br>
+</br>
+<table align="center"  border="1" width="600" height="300"  cellspacing="0">
+    <tr>
+        <th>产品信息类型</th>
+        <th>产品介绍</th>
+        <th>详细解释</th>
+        <th>内容</th>
+        <th>分数</th>
+    </tr>
+    <tr align="center">
+        <td rowspan="4">有形性</td>
+        <td>产品名称</td>
+        <td>名称说明</td>
+        <td id="a1"></td>
+        <td id="a"></td>
+    </tr>
+    <tr align="center">
+        <td>服务简介</td>
+        <td>简要说明服务类型，范围，适用人员及内容</td>
+        <td id="b1"></td>
+        <td id="b"></td>
+    </tr>
+    <tr align="center">
+        <td>服务人员及资质介绍</td>
+        <td>服务提供人员以及资质说明，工作经历</td>
+        <td id="c1"></td>
+        <td id="c"></td>
+    </tr>
+    <tr align="center">
+        <td>服务地点以及设施</td>
+        <td>线上或者线下，所需设施</td>
+        <td id="d1"></td>
+        <td id="d"></td>
+    </tr>
+    <tr align="center">
+        <td rowspan="5">可靠性</td>
+        <td>联系方式</td>
+        <td>提供联系方式</td>
+        <td id="e1"></td>
+        <td id="e"></td>
+    </tr>
+    <tr align="center">
+        <td>服务时长</td>
+        <td>服务的持续时间</td>
+        <td id="f1"></td>
+        <td id="f"></td>
+    </tr>
+    <tr align="center">
+        <td>价格</td>
+        <td>一次服务的价格</td>
+        <td id="g1"></td>
+        <td id="g"></td>
+    </tr>
+    <tr align="center">
+        <td>售后服务</td>
+        <td>本次服务结束后，后续服务支持</td>
+        <td id="h1"></td>
+        <td id="h"></td>
+    </tr>
+    <tr align="center">
+        <td>投诉渠道</td>
+        <td>服务过程中出现异常，解决渠道</td>
+        <td id="i1"></td>
+        <td id="i"></td>
+    </tr>
+    <tr align="center">
+        <td rowspan="2">响应性</td>
+        <td>确认预约时间</td>
+        <td>40分钟内</td>
+        <td id="j1"></td>
+        <td id="j"></td>
+    </tr>
+    <tr align="center">
+        <td>确认派单时间</td>
+        <td>2小时内</td>
+        <td id="k1"></td>
+        <td id="k"></td>
+    </tr>
+    <tr align="center">
+        <td rowspan="2">保证性</td>
+        <td>服务流程</td>
+        <td>服务的线性流程</td>
+        <td id="l1"></td>
+        <td id="l"></td>
+    </tr>
+    <tr align="center">
+        <td>法律信息</td>
+        <td>违约等法律说明</td>
+        <td id="m1"></td>
+        <td id="m"></td>
+    </tr>
+    <tr align="center">
+        <td rowspan="2">移情性</td>
+        <td>服务适用对象</td>
+        <td>服务适用对象说明</td>
+        <td id="n1"></td>
+        <td id="n"></td>
+    </tr>
+    <tr align="center">
+        <td>服务个性选择</td>
+        <td>根据不同对象，提供多样的服务选择</td>
+        <td id="o1"></td>
+        <td id="o"></td>
+    </tr>
+</table>
+<!-- <div id="chart1" style="float: left ; width: 400px ; height: 280px"></div> -->
+<div id="chart1" style="width: 400px ; height: 280px"></div>
+<br>
+<span id="character5"></span>
+<div id="chart2" style="width: 550px;height: 300px"></div>
+<br>
+<span id="character3"></span>
+<br><br></br></br>
+<ul>
+    <li><div id="test10"></div></li>
+    <li><div id="test11"></div></li>
+    <li><div id="test12"></div></li>
+    <li><div id="test13"></div></li>
+    <li><div id="test14"></div></li>
+</ul>
+
+<!--
+<div id="form2" style="float: left ;width: 800px;height: 300px">
+    <div class="layui-form">
+        <table class="layui-table" id="table1">
+            <thead>
+            <tr>
+                <th rowspan="2" width="70"></th>
+                <th colspan="4">用户方</th>
+                <th colspan="3">商家方</th>
+            </tr>
+            <tr>
+                <th>服务超时，与描述不符</th>
+                <th>商家态度消极</th>
+                <th>事件或其他冲突</th>
+                <th>服务人员不足，或资源不足</th>
+                <th>服务过程异常</th>
+                <th>用户联系取消</th>
+            </tr>
+            <tr id="tr-a">
+                <td>待付款</td>
+                <td id="a11"></td>
+                <td id="a2"></td>
+                <td id="a3"></td>
+                <td id="a4"></td>
+                <td id="a5"></td>
+                <td id="a6"></td>
+            </tr>
+            <tr id="tr-b">
+                <td>已付款</td>
+                <td id="b11"></td>
+                <td id="b2"></td>
+                <td id="b3"></td>
+                <td id="b4"></td>
+                <td id="b5"></td>
+                <td id="b6"></td>
+            </tr>
+            <tr id="tr-c">
+                <td>未派单</td>
+                <td id="c11"></td>
+                <td id="c2"></td>
+                <td id="c3"></td>
+                <td id="c4"></td>
+                <td id="c5"></td>
+                <td id="c6"></td>
+            </tr>
+            <tr id="tr-d">
+                <td>已派单</td>
+                <td id="d11"></td>
+                <td id="d2"></td>
+                <td id="d3"></td>
+                <td id="d4"></td>
+                <td id="d5"></td>
+                <td id="d6"></td>
+            </tr>
+            <tr id="tr-e">
+                <td>等待服务</td>
+                <td id="e11"></td>
+                <td id="e2"></td>
+                <td id="e3"></td>
+                <td id="e4"></td>
+                <td id="e5"></td>
+                <td id="e6"></td>
+            </tr>
+            <tr id="tr-f">
+                <td>服务进行中</td>
+                <td id="f11"></td>
+                <td id="f2"></td>
+                <td id="f3"></td>
+                <td id="f4"></td>
+                <td id="f5"></td>
+                <td id="f6"></td>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+-->
+
+</body>
+
+<!--<script src="/Sys/lib/layui/layui.js"></script>-->
+<script src="/Sys/lib/layuiii/layui.js"></script>
+<script src="/Sys/js/echarts.min.js"></script>
+<script>
+    function getQueryString(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+        return null;
+    }
+</script>
+<script>
+
+    var num= 1;
+    //console.log(num);
+
+    //alert(window.location.search);
+    var search = getQueryString("pid");
+    //alert(search);
+    num=search;
+
+
+    var myChart1 = echarts.init(document.getElementById('chart1'));
+    var myChart2 = echarts.init(document.getElementById('chart2'));
+    $.ajax({
+        url:'Sys/getProInfoByID',
+        type:'get',
+        data:{'service_id':num},
+        success:function(data){
+            JSON.stringify(data,function (k,v) {
+                //console.log(v[0]['service_id'])
+                document.getElementById('a1').innerText =v[0]['service_name'];
+                document.getElementById('a').innerText =v[0]['service_name'] === ''?'0':'10';
+                document.getElementById('b1').innerText =v[0]['service_intro'];
+                document.getElementById('b').innerText =v[0]['service_intro'] === ''?'0':'10';
+                document.getElementById('c1').innerText =v[0]['service_people'];
+                document.getElementById('c').innerText =v[0]['service_people'] === ''?'0':'10';
+                document.getElementById('d1').innerText =v[0]['service_device'];
+                document.getElementById('d').innerText =v[0]['service_device'] === ''?'0':'5';
+                document.getElementById('e1').innerText =v[0]['service_phone'];
+                document.getElementById('e').innerText =v[0]['service_phone'] === ''?'0':'7';
+                document.getElementById('f1').innerText =v[0]['service_duration'];
+                document.getElementById('f').innerText =v[0]['service_duration'] === ''?'0':'7';
+                document.getElementById('g1').innerText =v[0]['service_price'];
+                document.getElementById('g').innerText =v[0]['service_price'] === ''?'0':'7';
+                document.getElementById('h1').innerText =v[0]['service_post'];
+                document.getElementById('h').innerText =v[0]['service_post'] === ''?'0':'5';
+                document.getElementById('i1').innerText =v[0]['service_complaint'];
+                document.getElementById('i').innerText =v[0]['service_complaint'] === ''?'0':'5';
+                document.getElementById('j1').innerText =v[0]['service_confirmtime'];
+                document.getElementById('j').innerText =v[0]['service_confirmtime'] === '1'?'5':'0';
+                document.getElementById('k1').innerText =v[0]['service_dispatchtime'];
+                document.getElementById('k').innerText =v[0]['service_dispatchtime'] === '1'?'5':'0';
+                document.getElementById('l1').innerText =v[0]['service_procedure'];
+                document.getElementById('l').innerText =v[0]['service_procedure'] === ''?'0':'7';
+                document.getElementById('m1').innerText =v[0]['service_legalinfo'];
+                document.getElementById('m').innerText =v[0]['service_legalinfo'] === ''?'0':'5';
+                document.getElementById('n1').innerText =v[0]['service_audience'];
+                document.getElementById('n').innerText =v[0]['service_audience'] === ''?'0':'7';
+                document.getElementById('o1').innerText =v[0]['service_personalize'];
+                document.getElementById('o').innerText =v[0]['service_personalize'] === ''?'0':'5';
+
+            })
+
+        }
+    });
+    $.ajax({
+        url: 'Sys/radarChart',
+        type: 'get',
+        data: {'service_id': num},
+        success: function (res) {
+            myChart1.setOption({
+                tooltip: {},
+                // legend: {
+                //     data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+                // },
+                radar: {
+                    // shape: 'circle',
+                    name: {
+                        textStyle: {
+                            color: '#000000',
+                            // backgroundColor: '#ffffff',
+                            borderRadius: 3,
+                            padding: [3, 5]
+                        }
+                    },
+                    indicator: [
+                        {name: '有形性', max: 35},
+                        {name: '移情性', max: 12},
+                        {name: '保证性', max: 12},
+                        {name: '响应性', max: 10},
+                        {name: '可靠性', max: 31}
+                    ]
+                },
+                series: [{
+                    name: '具体得分',
+                    type: 'radar',
+                    areaStyle: {
+                        // normal: {},
+                        opacity: 0.5
+                    },
+                    data:
+                        [
+                            res
+                            // {
+                            //     value: [32.4, 10, 8.7, 8.5, 27.4],
+                            //     name: '平均得分'
+                            // }
+                        ]
+                }]
+            })
+            var sum1 = 0;
+            for (let i = 0; i < res.length; i++) {
+                sum1 += res[i];
+            }
+            ;
+            console.log(sum1);
+            document.getElementById("character1").innerText = "一、服务产品信息评分：" + sum1 + "分";
+        }
+    });
+    $.ajax({
+        url:'Sys/radarChart2',
+        type:'get',
+        data:{'service_id':num},
+        success:function (res){
+
+            myChart2.setOption({
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        crossStyle: {
+                            color: '#999'
+                        }
+                    }
+                },
+                legend: {
+                    data: ['蒸发量', '降水量']
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        data: ['预约阶段取消', '下单阶段取消', '派单阶段取消', '服务完成'],
+                        axisPointer: {
+                            type: 'shadow'
+                        }
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: '人数',
+                        min: 0,
+                        max: 20,
+                        interval: 2,
+                        axisLabel: {
+                            formatter: '{value} 人'
+                        }
+                    },
+
+                ],
+                series: [
+                    {
+                        name: '用户方',
+                        type: 'bar',
+                        data: [res.test1,res.test2,res.test3,res.message1-res.message3]
+
+                    },
+                    {
+                        name: '商家方',
+                        type: 'bar',
+                        data:[res.test11,res.test12,res.test13,res.message1-res.message3]
+                    },
+                ]
+            })
+            console.log(res.message4);
+            document.getElementById("character5").innerText = "二、服务过程信息评分："+res.message4+"分,"+
+                "共提供"+res.message1+"次服务，完成率"+res.message2+"%,其中存在"+res.message3+"次提前终止：";
+        }
+    });
+
+    // $.ajax({
+    //     url: 'Sys/radarChart3',
+    //     type: 'get',
+    //     data: {'service_id': num},
+    //     success: function (res) {
+    //         document.getElementById("character3").innerText = "三、服务评价评分：" + res.score + "分，" +"服务符合度：" + res.test1 + "分"
+    //          +"，服务商态度" + res.test2 + "分"+"，服务商效率" + res.test3 + "分"+"，服务评价" + res.test4 + "分"+"，服务人员服务" + res.test5 + "分";
+    //     }
+    // });
+    layui.use(['rate'], function(){
+        var rate = layui.rate;
+        $.get("Sys/radarChart3",{'service_id':num},function (res){
+            rate.render({
+                elem: '#test10'
+                ,value: res.test1
+                ,readonly: true
+                ,theme: '#328eee'
+            });rate.render({
+                elem: '#test11'
+                ,value: res.test2
+                ,readonly: true
+                ,theme: '#328eee'
+            });rate.render({
+                elem: '#test12'
+                ,value: res.test3
+                ,readonly: true
+                ,theme: '#328eee'
+            });rate.render({
+                elem: '#test13'
+                ,value: res.test4
+                ,readonly: true
+                ,theme: '#328eee'
+            });
+            rate.render({
+                elem: '#test14'
+                ,value: res.test5
+                ,readonly: true
+                ,theme: '#328eee'
+            });
+            document.getElementById("character3").innerText = "三、服务评价评分：" + res.score + "分，" +"服务符合度：" + res.test1 + "分"
+                +"，服务商态度" + res.test2 + "分"+"，服务商效率" + res.test3 + "分"+"，服务评价" + res.test4 + "分"+"，服务人员服务" + res.test5 + "分";
+        })
+
+
+    });
+</script>
+</html>
+
+
